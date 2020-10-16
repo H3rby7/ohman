@@ -1,0 +1,32 @@
+# Outputs
+bazel-*
+test-project-host-*
+dist/
+dist-schema/
+
+# IDEs
+jsconfig.json
+
+# Intellij IDEA/WebStorm
+# https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+.idea/
+
+# Also ignore code styles because .editorconfig is used instead.
+.idea/codeStyles/
+
+# Typings file.
+typings/
+
+# Misc
+coverage/
+node_modules/
+tmp/
+npm-debug.log*
+yarn-error.log*
+.ng_pkg_build/
+.ng-dev.log
+.ng-dev.user*
+
+# Mac OSX Finder files.
+**/.DS_Store
+.DS_Store
