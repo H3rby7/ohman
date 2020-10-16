@@ -37,8 +37,8 @@ func Get() []Todo {
 func Add(message string) string {
 	t := newTodo(message)
 	mtx.Lock()
+	defer mtx.Unlock()
 	list = append(list, t)
-	mtx.Unlock()
 	return t.ID
 }
 
@@ -84,14 +84,14 @@ func findTodoLocation(id string) (int, error) {
 
 func removeElementByLocation(i int) {
 	mtx.Lock()
+	defer mtx.Unlock()
 	list = append(list[:i], list[i+1:]...)
-	mtx.Unlock()
 }
 
 func setTodoCompleteByLocation(location int) {
 	mtx.Lock()
+	defer mtx.Unlock()
 	list[location].Complete = true
-	mtx.Unlock()
 }
 
 func isMatchingID(a string, b string) bool {
